@@ -1,16 +1,55 @@
-# React + Vite
+# Learn With Rama
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive website for an online programming course platform. It includes a landing page, a sign up / sign in flow, and a dashboard that is only accessible after login.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive layout for desktop, tablet, and mobile
+- Navbar with animated underline links and a hamburger menu on small screens
+- Landing page sections: Home, Courses, Tutors, Partners, and Contact
+- Partner logos that scroll continuously (CSS marquee animation)
+- Sign Up and Sign In pages with form validation
+- Protected Dashboard page that redirects to Sign In when not logged in
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- React Router
+- Vite
+- Plain CSS
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# 1. Clone the repository
+git clone https://github.com/USERNAME/learn-with-rama.git
+cd learn-with-rama
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+npm run dev
+```
+
+Then open the local URL shown in the terminal (usually `http://localhost:5173`).
+
+## Project Structure
+
+```
+src/
+├── components/   # Reusable components (Navbar, Partners, ...)
+├── pages/        # Home, SignUp, SignIn, Dashboard
+├── styles/       # CSS files
+├── utils/        # auth.js (sign up, sign in, sign out)
+├── App.jsx       # Route definitions
+└── main.jsx      # App entry point
+```
+
+## Authentication Note
+
+This project is for learning purposes. Accounts are stored in the browser's `localStorage`, and passwords are saved as plain text. Do not use this approach in a real application. For production, use a backend or a service such as Firebase Authentication.
+
+## Author
+
+Made by Rama.
