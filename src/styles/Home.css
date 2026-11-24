@@ -1,0 +1,195 @@
+/* ===== DASAR ===== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #364f6b;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.tengah {
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== SECTION ===== */
+section {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  width: 100%;
+  min-height: 500px;
+  margin: 0;
+  padding: 60px 30px;
+  background: #ffffff;
+}
+
+/* Warna selang-seling */
+section:nth-of-type(even) {
+  background: #f4f7fb;
+}
+
+/* Background selebar layar */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: inherit;
+}
+
+/* ===== KOLOM & TEKS ===== */
+.kolom {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Home & Courses: teks rata kiri, lebar dibatasi */
+#home .kolom,
+#courses .kolom {
+  max-width: 550px;
+  text-align: left;
+}
+
+.kolom .deskripsi {
+  margin: 0 0 15px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #3f72af;
+}
+
+h2 {
+  width: 100%;
+  margin: 0 0 20px;
+  font-family: inherit;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #364f6b;
+}
+
+.kolom p {
+  margin: 0 0 15px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #64748b;
+}
+
+#home .kolom p,
+#courses .kolom p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* ===== GAMBAR ===== */
+section img {
+  display: block;
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 20px;
+}
+
+/* ===== TOMBOL ===== */
+a.tbl-pink {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 25px;
+  border-radius: 25px;
+  background: #fc5185;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+a.tbl-pink:hover {
+  background: #3f72af;
+  transform: translateY(-3px);
+}
+
+/* ===== TABLET ===== */
+@media screen and (max-width: 991px) {
+  section {
+    min-height: auto;
+    padding: 45px 30px;
+    gap: 30px;
+  }
+
+  #home .kolom,
+  #courses .kolom {
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  .kolom p {
+    font-size: 15px;
+  }
+
+  section img {
+    max-width: 400px;
+    height: 340px;
+  }
+}
+
+/* ===== HP ===== */
+@media screen and (max-width: 576px) {
+  section {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .kolom {
+    width: 100%;
+  }
+
+  .kolom .deskripsi {
+    font-size: 17px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .kolom p {
+    font-size: 14px;
+  }
+
+  #home .kolom p,
+  #courses .kolom p {
+    text-align: left;
+  }
+
+  section img {
+    flex: none;
+    max-width: 320px;
+    height: auto;
+  }
+}

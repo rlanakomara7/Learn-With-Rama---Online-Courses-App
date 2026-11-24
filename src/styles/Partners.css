@@ -1,0 +1,102 @@
+/* Partner section */
+.partner-list {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 35px auto 50px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+/* Kartu partner */
+.kartu-partner {
+  flex: 0 1 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Logo partner */
+.kartu-partner img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Hover */
+.kartu-partner:hover {
+  transform: translateY(-5px);
+}
+
+/* Tablet */
+@media screen and (max-width: 991px) {
+  .partner-list {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .kartu-partner {
+    flex-basis: 150px;
+  }
+
+  .kartu-partner img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+  .partner-list {
+    gap: 15px;
+    padding: 15px 10px;
+    margin: 25px auto 35px;
+  }
+
+  .kartu-partner {
+    flex-basis: calc(50% - 15px);
+    padding: 10px;
+  }
+
+  .kartu-partner img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* animation */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.partner-list {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: geser-partner 25s linear infinite;
+}
+
+.kartu-partner {
+  flex: none;
+}
+
+@keyframes geser-partner {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

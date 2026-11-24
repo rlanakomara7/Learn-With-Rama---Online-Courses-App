@@ -1,0 +1,234 @@
+:root {
+  --nav-color: #364f6b;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e3e8ef;
+  box-shadow: 0 2px 8px rgba(54, 79, 107, 0.06);
+}
+
+nav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* ===== LOGO ===== */
+.logo a {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  color: var(--nav-color);
+  white-space: nowrap;
+}
+
+/* ===== MENU (DESKTOP) ===== */
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--nav-color);
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Garis bawah animasi (kecuali tombol) */
+nav ul li a:not(.tbl-biru)::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+nav ul li a:not(.tbl-biru):hover::after,
+nav ul li a:not(.tbl-biru):focus-visible::after {
+  transform: scaleX(1);
+}
+
+nav ul li a:focus-visible {
+  outline: 2px solid var(--nav-color);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ===== TOMBOL SIGN UP ===== */
+nav ul li a.tbl-biru {
+  margin-left: 8px;
+  padding: 0 24px;
+  color: #ffffff;
+  background: var(--nav-color);
+  border-radius: 8px;
+}
+
+nav ul li a.tbl-biru:hover {
+  background: #263a50;
+}
+
+/* ===== TOMBOL HAMBURGER (disembunyikan di desktop) ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.hamburger:hover {
+  background: #f4f7fb;
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid var(--nav-color);
+  outline-offset: 2px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--nav-color);
+  border-radius: 2px;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* tanda X saat menu terbuka */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== TABLET & HP ===== */
+@media screen and (max-width: 991.98px) {
+  .logo a {
+    font-size: 28px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menu dropdown */
+  nav .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 12px 5% 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e3e8ef;
+    box-shadow: 0 12px 16px rgba(54, 79, 107, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  nav .menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+  }
+
+  nav ul li a {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    justify-content: flex-start;
+    border-radius: 8px;
+  }
+
+  nav ul li a:not(.tbl-biru):hover {
+    background: #f4f7fb;
+  }
+
+  nav ul li a:not(.tbl-biru)::after {
+    display: none;
+  }
+
+  nav ul li a.tbl-biru {
+    justify-content: center;
+    margin: 12px 0 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .logo a {
+    font-size: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav ul li a,
+  nav ul li a::after,
+  nav .menu,
+  .hamburger,
+  .hamburger span {
+    transition: none;
+  }
+}
+
+nav ul li .nav-user {
+  padding: 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--nav-color);
+}

@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: clip;
+}
+
+/* Penetral CSS bawaan Vite (max-width, border, bayangan) */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: none;
+  border: 0;
+  box-shadow: none;
+  background: #ffffff;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #364f6b;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Pengatur lebar konten (navbar, footer) */
+.wrapper {
+  width: 1100px;
+  max-width: 90%;
+  margin: 0 auto;
+}

@@ -1,0 +1,75 @@
+/* ===== CONTACT / FOOTER ===== */
+#contact {
+  min-height: 250px;
+  padding: 70px 30px;
+  background: #1e293b;
+}
+
+#contact .wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#contact .footer {
+  display: grid;
+  grid-template-columns: 1.3fr 1.3fr 1fr 1fr;
+  gap: 45px;
+  align-items: start;
+}
+
+#contact .footer-section {
+  min-width: 0;
+  text-align: left;
+}
+
+#contact .footer-section h3 {
+  margin: 0 0 20px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+#contact .footer-section p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+#contact .footer-section b {
+  color: #ffffff;
+}
+
+/* ===== TABLET ===== */
+@media screen and (max-width: 991px) {
+  #contact {
+    padding: 55px 30px;
+  }
+
+  #contact .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+}
+
+/* ===== HP ===== */
+@media screen and (max-width: 576px) {
+  #contact {
+    padding: 40px 25px;
+  }
+
+  #contact .footer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  #contact .footer-section h3 {
+    font-size: 19px;
+  }
+
+  #contact .footer-section p {
+    font-size: 14px;
+  }
+}

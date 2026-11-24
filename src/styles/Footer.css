@@ -1,0 +1,39 @@
+/* Footer */
+#copyright {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 28px 20px;
+  background: #1e293b;
+  border-top: 1px solid #334155;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Copyright text */
+#copyright .wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Brand name */
+#copyright b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+  #copyright {
+    padding: 22px 15px;
+  }
+
+  #copyright .wrapper {
+    font-size: 12px;
+  }
+}
